@@ -12,7 +12,30 @@ vue2 + webpack + node.js + elementUI 个人博客 http://www.zhongdaling.me
 
 
 ## Structure
-
+```
+.
+├── LICENSE
+├── README.md
+├── .babelrc
+├── index.js
+├── nodemon.json
+├── package.json
+├── src
+│   ├── client
+│   │   ├── App.vue
+│   │   ├── components
+│   │   │   └── Hello.vue
+│   │   └── index.js
+│   └── server
+│       ├── index.js
+│       ├── public
+│       │   └── favicon.ico
+│       ├── router.js
+│       └── views
+│           ├── error.jade
+│           └── index.jade
+└── webpack.config.js
+```
 
 
 ## Usage
