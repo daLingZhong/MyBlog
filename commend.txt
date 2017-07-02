@@ -1,0 +1,14 @@
+#mongoDB path 
+mongod -dbpath = "D:\Program Files\MongoDB\Server\data"
+
+
+
+#mongoDB start code
+"D:\Program Files\MongoDB\Server\3.4\bin\mongod.exe"
+
+
+
+
+
+
+
