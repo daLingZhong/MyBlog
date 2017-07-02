@@ -4,7 +4,8 @@
 			<img src="../../static/img/head.png" height="150" width="150" alt="">
 		</div>
 		<div>
-			个人博客地址 &nbsp;<a href="http://www.zhongdaling.me">http://www.zhongdaling.me</a>
+			个人博客地址 &nbsp;<a href="http://www.zhongdaling.me">http://www.zhongdaling.me</a><br><br>
+			github地址 &nbsp;<a href="https://github.com/daLingZhong/MyBlog">https://github.com/daLingZhong/MyBlog</a>
 		</div>
 	</div>
 </template>
