@@ -38,6 +38,7 @@ module.exports = function(app){
 
 	//微博列表
 	app.get('/all',PluginBlog.list.get)
+	app.get('/life',PluginBlog.life.get)
 
 	//编辑博客
 	app.get('/editor/:id',PluginBlog.editor.get)

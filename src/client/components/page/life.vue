@@ -137,7 +137,7 @@
 		},
 		methods:{
 			dataList(){
-				this.$http.get('/all').then((param)=>{
+				this.$http.get('/life').then((param)=>{
 					this.list = []
 					this.list.push(param.data)
 				});

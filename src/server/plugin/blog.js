@@ -54,6 +54,25 @@ module.exports.list = {
 	}
 };
 
+module.exports.life = {
+	get:function(req,res,next){
+		ModelBlog.find({
+			type:'随笔'
+		},null,{
+			sort:{
+				_id:-1
+			}
+		}).populate('author').exec(function(err,data){
+			if (err) {
+				console.log(err)
+			}
+			// console.log(data)
+			res.send(data)
+		});
+		// console.log('111')
+	}
+};
+
 module.exports.editor = {
 	get: function (req, res, next){
 		var str = req.url 

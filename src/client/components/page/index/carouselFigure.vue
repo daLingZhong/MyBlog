@@ -8,7 +8,7 @@
     </div>
 </template>
 
-<style>
+<style scope>
 	#box{
 		margin-top: 120px;
 	}

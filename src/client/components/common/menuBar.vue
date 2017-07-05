@@ -23,7 +23,7 @@
   			    <el-menu-item index="2-3">后端</el-menu-item>
   			    <el-menu-item index="2-4">其他</el-menu-item>
   			  </el-submenu>
-  			  <el-menu-item index="3"><i class="el-icon-edit"></i>随笔</el-menu-item>
+  			  <el-menu-item index="life"><i class="el-icon-edit"></i>随笔</el-menu-item>
   			  <el-menu-item index="aboutme"><i class="el-icon-information"></i>关于我</a></el-menu-item>
 			  </el-menu>
 		  </el-col>
@@ -162,12 +162,12 @@
     	},
       onRoutes(){
           return this.$route.path.replace('/','');
-          console.log('click')
+          // console.log('click')
       }
 	},
     methods: {
       handleSelect(key, keyPath) {
-        console.log(key, keyPath);
+        // console.log(key, keyPath);
         this.$router.push('/'+key)
       },
       handleCommand(command) {

@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import $ from 'expose?$!jquery'
 	export default{
 		data(){
 			return{
@@ -25,7 +26,8 @@
 			}
 		},
 		mounted(){
-			this.fetchData()
+			this.fetchData(),
+			window.addEventListener('resize', this.width);
 		},
 		methods:{
 			fetchData(){
@@ -35,7 +37,14 @@
 						this.list.push(param.data)
 					},
 					// req => console.log('错误'+req)
-				)
+				);
+            	this.screenWidth = document.body.clientWidth
+                var width = this.screenWidth
+                if (width<1000) {
+                	$(".view_content img").addClass("imgsize")
+                }else{
+                    $('.view_content img').removeClass("imgsize")
+                }
 			},
 			toEditor(id){
 				this.$http.get('/editor/'+id).then((param)=>{
@@ -46,7 +55,6 @@
 						this.$router.push('/editor/'+id)
 					}
 				})
-				
 			},
 			del(id){
 				this.$http.get('/del/'+id).then((param)=>{
@@ -64,7 +72,7 @@
 
 <style type="text/css">
 	.view{
-		width: 90%;
+		width: 100%;
 		min-height: 520px;
 		margin: 20px auto;
 	}
@@ -86,5 +94,8 @@
 	}
 	.view_content{
 		margin:60px 40px 100px 40px;
+	}
+	.imgsize{
+		width: 300px;
 	}
 </style>

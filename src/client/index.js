@@ -9,10 +9,19 @@ import 'element-ui/lib/theme-default/index.css'
 import porxy from 'http-proxy-middleware'
 import vuex from 'vuex'
 import axios from 'axios'
+import 'mint-ui/lib/style.css'
+import { Cell, Swipe, SwipeItem ,Navbar ,TabItem , Header , Button} from 'mint-ui'
 // import $ from 'jquery'
 Vue.config.debug = true
 Vue.use(Router)
 Vue.use(vuex)
+Vue.component(Cell.name, Cell)
+Vue.component(Swipe.name, Swipe)
+Vue.component(SwipeItem.name, SwipeItem)
+Vue.component(Navbar.name, Navbar);
+Vue.component(TabItem.name, TabItem);
+Vue.component(Header.name, Header);
+Vue.component(Button.name, Button);
 Vue.prototype.$http = axios
 // var jQuery = require('jquery');
 // require('jquery.easing')(jQuery);
@@ -50,6 +59,10 @@ const router = new Router({
           {
               path: '/aboutme',
               component: resolve => require(['./components/page/aboutme.vue'], resolve)
+          },
+          {
+              path: '/life',
+              component: resolve => require(['./components/page/life.vue'], resolve)
           },
         ]
     },
