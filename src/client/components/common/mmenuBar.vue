@@ -18,6 +18,7 @@
 	      <mt-cell title="文章" label="查看所有" to="/all" is-link class="left_content"></mt-cell>
 	      <mt-cell title="随笔" label="个人游记" to="/life" is-link class="left_content"></mt-cell>
 	      <mt-cell title="关于我" label="钟大灵" to="/aboutme" is-link class="left_content"></mt-cell>
+	      <div  @click="logout"><mt-cell title="退出登录" class="left_content" style="color:red"></mt-cell></div>
 	      <div class="beian">
 	        辽ICP备17010522号
 	      </div>
@@ -130,6 +131,15 @@ import $ from 'expose?$!jquery'
 	    },
 	    back(){
 	    	this.$router.push({path: '/index'});
+	    },
+	    logout(){
+	    	let username = localStorage.getItem('ms_username');
+	    	localStorage.removeItem('ms_username');
+            this.$http.post('/logout',username).then((param)=>{
+            	 this.$router.push({path: '/login', replace: true});
+            },response=>{
+            	alert('error')
+            })
 	    }
 	}
 	}

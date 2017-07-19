@@ -31,7 +31,7 @@
                 this.screenWidth = document.body.clientWidth
                 var width = this.screenWidth
                 // console.log(width)
-                if (width<1366) {
+                if (width<1346) {
                     this.menubar = false;
                     this.mmenubar = true;
                 }else{
@@ -43,7 +43,7 @@
                 this.screenWidth = document.body.clientWidth
                 var width = this.screenWidth
                 // console.log(width)
-                if (width<1366) {
+                if (width<1346) {
                     this.menubar = false;
                     this.mmenubar = true;
                 }else{

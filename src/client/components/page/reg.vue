@@ -56,7 +56,8 @@ mouseCanvas.sketchFun();
                             if (param.data.status == 1) {
                                 this.$message.warning(param.data.msg);
                             }else if(param.data.status == 0){
-                                this.$router.push('/index');
+                                localStorage.setItem('ms_username',this.ruleForm.name); //通过localStorage传递username
+                                this.$router.push({path: '/index', replace: true});
                             }
                         }, response => {
                             // error callback

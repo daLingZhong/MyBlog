@@ -37,7 +37,7 @@
 	.mlist_all{
 		margin-top: 60px;
 		min-height: 800px;
-		margin-bottom: 60px;
+		margin-bottom: -90px;
 	}
 	.mlistBox{
 		margin-left: 10px;
