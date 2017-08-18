@@ -1,6 +1,9 @@
 {
-  "name": "lovuean",
+  "name": "myblog",
+  "description": "A Vue.js project",
   "version": "1.0.0",
+  "author": "daLingZhong",
+  "private": true,
   "description": "",
   "main": "index.js",
   "scripts": {
