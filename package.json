@@ -4,13 +4,11 @@
   "version": "1.0.0",
   "author": "daLingZhong",
   "private": true,
-  "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js",
     "build": "webpack -p"
   },
-  "author": "",
   "license": "MIT",
   "devDependencies": {
     "axios": "^0.16.1",
