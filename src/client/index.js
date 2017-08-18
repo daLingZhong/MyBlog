@@ -13,6 +13,9 @@ import 'mint-ui/lib/style.css'
 import { Cell, Swipe, SwipeItem ,Navbar ,TabItem , Header , Button} from 'mint-ui'
 // import $ from 'jquery'
 Vue.config.debug = true
+import Sketch from '../server/public/js/sketch.js'
+
+window.Sketch = Sketch
 Vue.use(Router)
 Vue.use(vuex)
 Vue.component(Cell.name, Cell)

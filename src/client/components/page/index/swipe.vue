@@ -1,7 +1,7 @@
 <template>
 	<div class="swipe">
 	    <mt-swipe :auto="3000" class="swipebox">
-	      <mt-swipe-item v-for="item in imgData" :key="item" class="swipeitem">
+	      <mt-swipe-item v-for="item in imgData" :key="1" class="swipeitem">
 	        <img :src="item.url">
 	      </mt-swipe-item>
 	    </mt-swipe>

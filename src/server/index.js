@@ -21,13 +21,15 @@ import cors from 'cors'
 const app = express()
 
 //连接数据库
-mongoose.connect('mongodb://47.94.83.141/LoVueAn');
+mongoose.createConnection('mongodb://localhost/myblog');
 //配置session，加载中间件
 app.use(session({
     secret: "45454",
+    resave: false,// 是否每次都重新保存会话，建议false
+    saveUninitialized: false,  // 是否自动保存未初始化的会话，建议false
     store: new MongoStore({
     cookieSecret: 'jdghjf',
-    url:'mongodb://47.94.83.141/LoVueAn', //最新写法
+    url:'mongodb://localhost/myblog' //最新写法,
   })
 }));
 
