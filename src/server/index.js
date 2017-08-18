@@ -21,7 +21,7 @@ import cors from 'cors'
 const app = express()
 
 //连接数据库
-mongoose.createConnection('mongodb://localhost/myblog');
+mongoose.createConnection('mongodb://47.94.83.141/myblog');
 //配置session，加载中间件
 app.use(session({
     secret: "45454",
@@ -29,7 +29,7 @@ app.use(session({
     saveUninitialized: false,  // 是否自动保存未初始化的会话，建议false
     store: new MongoStore({
     cookieSecret: 'jdghjf',
-    url:'mongodb://localhost/myblog' //最新写法,
+    url:'mongodb://47.94.83.141/myblog' //最新写法,
   })
 }));
 
@@ -85,6 +85,6 @@ app.use(function(err, req, res, next) {
   })
 })
 
-app.listen(3000) //设置监听端口
+app.listen(80) //设置监听端口
 
 export default app
