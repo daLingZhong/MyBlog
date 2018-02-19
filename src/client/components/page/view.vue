@@ -73,7 +73,7 @@ import $ from 'expose?$!jquery'
 <style type="text/css">
 	.view{
 		width: 100%;
-		min-height: 520px;
+		min-height: 800px;
 		margin: 20px auto;
 	}
 	.view_title{

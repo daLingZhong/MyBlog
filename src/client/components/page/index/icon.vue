@@ -61,7 +61,7 @@
 </style>
 
 <script>
-import $ from 'expose?$!jquery'
+import $ from 'expose-loader?$!jquery'
 import 'jquery.easing' //插件可用   
 	export default{
        data(){
@@ -92,8 +92,9 @@ import 'jquery.easing' //插件可用
 	        },500);
        	},
 		menu() {
-		    this.scroll = document.body.scrollTop;
-		    var top = this.scroll
+		    this.scroll = document.documentElement.scrollTop || document.body.scrollTop;
+		    var top = this.scroll;
+		    // console.log(top)
 		    if(top>500){
 		    	$('.sml_wrapper').animate({left:"-20%"},2000,'easeOutBack');
 		    	$('.smr_wrapper').animate({right:"-75%"},2000,'easeOutCubic');

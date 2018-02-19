@@ -27,7 +27,7 @@ module.exports = function(app){
 	app.post('/reg',PluginUser.reg.post);
 	
 	//管理员权限
-	app.get('/admin',PluginUser.admin.get)
+	app.get('/admin',PluginUser.admin.get);
 
 	//发布博客
 	// app.get('/add',PluginBlog.add.get);

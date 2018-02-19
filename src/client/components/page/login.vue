@@ -48,9 +48,12 @@ mouseCanvas.sketchFun();
             submitForm(formName) {
                 var formData = this.ruleForm;
                 this.$refs[formName].validate((valid) => {
+
                     if (valid) {
+                        // console.log('1');
                         this.$http.post('/login',formData).then((param)=> {
                             // success callback
+
                             if (param.data.status == 3) {
                                 this.$message.warning(param.data.msg);
                             }else if(param.data.status == 2){

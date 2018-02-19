@@ -21,25 +21,25 @@ import cors from 'cors'
 const app = express()
 
 //连接数据库
-mongoose.createConnection('mongodb://47.94.83.141/myblog');
+mongoose.connect('mongodb://47.94.83.141/myblog');
 //配置session，加载中间件
 app.use(session({
-    secret: "45454",
-    resave: false,// 是否每次都重新保存会话，建议false
-    saveUninitialized: false,  // 是否自动保存未初始化的会话，建议false
-    store: new MongoStore({
+  secret: "45454",
+  resave: false, // 是否每次都重新保存会话，建议false
+  saveUninitialized: false, // 是否自动保存未初始化的会话，建议false
+  store: new MongoStore({
     cookieSecret: 'jdghjf',
-    url:'mongodb://47.94.83.141/myblog' //最新写法,
+    url: 'mongodb://47.94.83.141/myblog' //最新写法,
   })
 }));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 // app.set('view engine', 'jade')
-app.engine('html',ejs.__express); //使用ejs模板引擎，并且将html尾缀替换成html
+app.engine('html', ejs.__express); //使用ejs模板引擎，并且将html尾缀替换成html
 app.set('view engine', 'html');
-if(process.env.NODE_ENV == 'development'){
-    app.use(cors());
+if (process.env.NODE_ENV == 'development') {
+  app.use(cors());
 }
 
 app.use(express.static(path.join(__dirname, 'public')))
@@ -49,11 +49,12 @@ app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 app.use(logger('dev'))
 //路由中间件
 
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({
+  extended: false
+}))
 app.use(bodyParser.json())
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
-
 
 
 
@@ -61,7 +62,9 @@ const compiler = webpack(config)
 
 app.use(webpackDevMiddleware(compiler, {
   publicPath: config.output.publicPath,
-  stats: { colors: true }
+  stats: {
+    colors: true
+  }
 }))
 
 app.use(webpackHotMiddleware(compiler))
